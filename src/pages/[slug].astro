@@ -8,6 +8,15 @@ import JsonTool from '../tools/JsonTool';
 import Base64Tool from '../tools/Base64Tool';
 import UuidTool from '../tools/UuidTool';
 import HashTool from '../tools/HashTool';
+import UrlTool from '../tools/UrlTool';
+import RegexTool from '../tools/RegexTool';
+import TimestampTool from '../tools/TimestampTool';
+import JwtTool from '../tools/JwtTool';
+import FormatterTool from '../tools/FormatterTool';
+import MarkdownTool from '../tools/MarkdownTool';
+import ColorTool from '../tools/ColorTool';
+import CronTool from '../tools/CronTool';
+import LoremTool from '../tools/LoremTool';
 import { implementedTools, type Tool } from '../data/tools';
 import { site } from '../config';
 import { t } from '../i18n/en';
@@ -54,6 +63,15 @@ const schema = [
   {tool.component === 'Base64Tool' && <Base64Tool client:load mode={tool.mode as 'encode' | 'decode'} />}
   {tool.component === 'UuidTool' && <UuidTool client:load />}
   {tool.component === 'HashTool' && <HashTool client:load />}
+  {tool.component === 'UrlTool' && <UrlTool client:load mode={tool.mode as 'encode' | 'decode'} />}
+  {tool.component === 'RegexTool' && <RegexTool client:load />}
+  {tool.component === 'TimestampTool' && <TimestampTool client:load />}
+  {tool.component === 'JwtTool' && <JwtTool client:load />}
+  {tool.component === 'FormatterTool' && <FormatterTool client:load lang={tool.mode as any} />}
+  {tool.component === 'MarkdownTool' && <MarkdownTool client:load />}
+  {tool.component === 'ColorTool' && <ColorTool client:load />}
+  {tool.component === 'CronTool' && <CronTool client:load />}
+  {tool.component === 'LoremTool' && <LoremTool client:load />}
   <AdSlot position="after-tool" />
   <h2>{t.tool.howTo}</h2>
   <ol>{tool.howTo.map((step) => <li>{step}</li>)}</ol>
