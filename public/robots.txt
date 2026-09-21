@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devcrate-9ii.pages.dev/sitemap-index.xml
